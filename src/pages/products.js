@@ -1,0 +1,268 @@
+import { priceFormat } from "../../lib";
+import Header from "../components/header"
+import Footer from "../components/footer";
+import SlideBar from "../components/slidebar";
+import data from '../../db.json' assert {type: 'json'}
+import '@fortawesome/fontawesome-free/css/all.css'
+
+const ProductPage = function () {
+
+    function discount(original_price, current_seller) {
+        const discountValue = ((original_price - current_seller) / original_price) * 100;
+        return Math.round(discountValue);
+    }
+
+    function rating(rating) {
+        let stars = '';
+        for (let i = 0; i < 5; i++) {
+            if (i < rating) {
+                stars += '<i class="fas fa-star"></i>';
+            } else {
+                stars += '<i class="far fa-star"></i>';
+            }
+        }
+        return stars;
+    }
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const popularProducts = document.getElementById("popularProducts");
+    //     const bestSellerProducts = document.getElementById("bestSellerProducts");
+    //     const lowProducts = document.getElementById("lowProducts");
+    //     const highProducts = document.getElementById("highProducts");
+
+    //     popularProducts.addEventListener("click", () => {
+    //         data.sort(function (a, b) {
+    //             return b.quantity_sold?.value - a.quantity_sold?.value;
+    //         });
+    //         data.sort(function () {
+    //             return 0.5 - Math.random();
+    //         });
+
+    //         document.getElementById("popularProducts").className = "bg-[#1A94FF] text-[white]"
+    //         document.getElementById("bestSellerProducts").className = "hover:text-red-500"
+    //         document.getElementById("lowProducts").className = "hover:text-red-500"
+    //         document.getElementById("highProducts").className = "hover:text-red-500"
+
+    //         document.getElementById("products").innerHTML = data.map(function (book, index) {
+    //             return /*html*/`
+    //                     <div class="m-3">
+    //                         <div class="w-[200px] h-[200px] mx-auto p-1">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}">
+    //                                 <img src="${book.images[0].base_url}" class="w-[auto] h-[200px]" />
+    //                             </a>
+    //                         </div>
+
+    //                         <div class="p-2">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}"
+    //                                 class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
+    //                             <div class="flex pt-3 pb-3">
+    //                                 <div class="flex border-r-[1px] h-[15px]">
+    //                                     <p class="text-[8px] pr-2 pt-0.5">${rating(book.rating_average)}</p>
+    //                                 </div>
+    //                                 <p class="text-[12px] font-normal leading-[16px] text-[#787878] pl-2">Đã bán ${book.quantity_sold?.value > 1000 ? '1000+' : book.quantity_sold?.value ?? 0}</p>
+    //                             </div>
+    //                             <div class="flex">
+    //                                 <p class="text-[16px] font-normal leading-[24px] text-[#FF424E] p-1">${priceFormat.format(book.current_seller.price)}</p>
+    //                                 <div class="w-[40px] h-[20px] bg-[#FFF0F1] border-[1px] border-[#FF424E] rounded-[2px] mt-2">
+    //                                     <p class="text-[14px] leading-[18px] font-normal text-[#FF424E] ml-0.5">-${discount(book.original_price, book.current_seller.price)}%</p>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `
+    //         }).join('')
+    //     });
+
+    //     bestSellerProducts.addEventListener("click", () => {
+    //         data.sort(function (a, b) {
+    //             return b.quantity_sold?.value - a.quantity_sold?.value;
+    //         });
+
+    //         document.getElementById("bestSellerProducts").className = "bg-[#1A94FF] text-[white]"
+    //         document.getElementById("popularProducts").className = "hover:text-red-500"
+    //         document.getElementById("lowProducts").className = "hover:text-red-500"
+    //         document.getElementById("highProducts").className = "hover:text-red-500"
+
+    //         document.getElementById("products").innerHTML = data.map(function (book, index) {
+    //             return /*html*/`
+    //                     <div class="m-3">
+    //                         <div class="w-[200px] h-[200px] mx-auto p-1">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}">
+    //                                 <img src="${book.images[0].base_url}" class="w-[auto] h-[200px]" />
+    //                             </a>
+    //                         </div>
+
+    //                         <div class="p-2">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}"
+    //                                 class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
+    //                             <div class="flex pt-3 pb-3">
+    //                                 <div class="flex border-r-[1px] h-[15px]">
+    //                                     <p class="text-[8px] pr-2 pt-0.5">${rating(book.rating_average)}</p>
+    //                                 </div>
+    //                                 <p class="text-[12px] font-normal leading-[16px] text-[#787878] pl-2">Đã bán ${book.quantity_sold?.value > 1000 ? '1000+' : book.quantity_sold?.value ?? 0}</p>
+    //                             </div>
+    //                             <div class="flex">
+    //                                 <p class="text-[16px] font-normal leading-[24px] text-[#FF424E] p-1">${priceFormat.format(book.current_seller.price)}</p>
+    //                                 <div class="w-[40px] h-[20px] bg-[#FFF0F1] border-[1px] border-[#FF424E] rounded-[2px] mt-2">
+    //                                     <p class="text-[14px] leading-[18px] font-normal text-[#FF424E] ml-0.5">-${discount(book.original_price, book.current_seller.price)}%</p>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `
+    //         }).join('')
+    //     });
+
+    //     lowProducts.addEventListener("click", () => {
+    //         data.sort(function (a, b) {
+    //             return a.current_seller.price - b.current_seller.price;
+    //         });
+
+    //         document.getElementById("lowProducts").className = "bg-[#1A94FF] text-[white]"
+    //         document.getElementById("popularProducts").className = "hover:text-red-500"
+    //         document.getElementById("bestSellerProducts").className = "hover:text-red-500"
+    //         document.getElementById("highProducts").className = "hover:text-red-500"
+
+    //         document.getElementById("products").innerHTML = data.map(function (book, index) {
+    //             return /*html*/`
+    //                     <div class="m-3">
+    //                         <div class="w-[200px] h-[200px] mx-auto p-1">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}">
+    //                                 <img src="${book.images[0].base_url}" class="w-[auto] h-[200px]" />
+    //                             </a>
+    //                         </div>
+
+    //                         <div class="p-2">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}"
+    //                                 class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
+    //                             <div class="flex pt-3 pb-3">
+    //                                 <div class="flex border-r-[1px] h-[15px]">
+    //                                     <p class="text-[8px] pr-2 pt-0.5">${rating(book.rating_average)}</p>
+    //                                 </div>
+    //                                 <p class="text-[12px] font-normal leading-[16px] text-[#787878] pl-2">Đã bán ${book.quantity_sold?.value > 1000 ? '1000+' : book.quantity_sold?.value ?? 0}</p>
+    //                             </div>
+    //                             <div class="flex">
+    //                                 <p class="text-[16px] font-normal leading-[24px] text-[#FF424E] p-1">${priceFormat.format(book.current_seller.price)}</p>
+    //                                 <div class="w-[40px] h-[20px] bg-[#FFF0F1] border-[1px] border-[#FF424E] rounded-[2px] mt-2">
+    //                                     <p class="text-[14px] leading-[18px] font-normal text-[#FF424E] ml-0.5">-${discount(book.original_price, book.current_seller.price)}%</p>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `
+    //         }).join('')
+    //     });
+
+    //     highProducts.addEventListener("click", () => {
+    //         data.sort(function (a, b) {
+    //             return b.current_seller.price - a.current_seller.price;
+    //         });
+
+    //         document.getElementById("highProducts").className = "bg-[#1A94FF] text-[white]"
+    //         document.getElementById("popularProducts").className = "hover:text-red-500"
+    //         document.getElementById("bestSellerProducts").className = "hover:text-red-500"
+    //         document.getElementById("lowProducts").className = "hover:text-red-500"
+
+    //         document.getElementById("products").innerHTML = data.map(function (book, index) {
+    //             return /*html*/`
+    //                     <div class="m-3">
+    //                         <div class="w-[200px] h-[200px] mx-auto p-1">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}">
+    //                                 <img src="${book.images[0].base_url}" class="w-[auto] h-[200px]" />
+    //                             </a>
+    //                         </div>
+
+    //                         <div class="p-2">
+    //                             <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}"
+    //                                 class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
+    //                             <div class="flex pt-3 pb-3">
+    //                                 <div class="flex border-r-[1px] h-[15px]">
+    //                                     <p class="text-[8px] pr-2 pt-0.5">${rating(book.rating_average)}</p>
+    //                                 </div>
+    //                                 <p class="text-[12px] font-normal leading-[16px] text-[#787878] pl-2">Đã bán ${book.quantity_sold?.value > 1000 ? '1000+' : book.quantity_sold?.value ?? 0}</p>
+    //                             </div>
+    //                             <div class="flex">
+    //                                 <p class="text-[16px] font-normal leading-[24px] text-[#FF424E] p-1">${priceFormat.format(book.current_seller.price)}</p>
+    //                                 <div class="w-[40px] h-[20px] bg-[#FFF0F1] border-[1px] border-[#FF424E] rounded-[2px] mt-2">
+    //                                     <p class="text-[14px] leading-[18px] font-normal text-[#FF424E] ml-0.5">-${discount(book.original_price, book.current_seller.price)}%</p>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `
+    //         }).join('')
+    //     });
+
+    // });
+
+    return /*html*/`
+    
+    ${Header()}
+
+    <div class="w-full flex justify-around pt-3">
+        ${SlideBar()}
+
+        <div class="mx-auto w-[950px]">
+            <div>
+                <h1 class="text-[23px] leading-[28px] font-normal p-4 text-[#000000]">Nhà Sách Tiki</h1>
+                <img src="../src/images/Banner.png" alt="" class="w-[800px] h-[285px]">
+            </div>
+
+            <div class="border-b-[1px] w-[900px] p-3">
+                <div class="flex justify-around w-[500px] font-normal text-[13px] leading-[20px]">
+                    <button id="popularProducts" class="hover:text-red-500">Phổ biến</button>
+                    <button id="bestSellerProducts" class="hover:text-red-500">Bán chạy</button>
+                    <button id="" class="hover:text-red-500">Hàng mới</button>
+                    <button id="lowProducts" class="hover:text-red-500">Giá thấp</button>
+                    <button id="highProducts" class="hover:text-red-500">Giá cao</button>
+                </div>
+            </div>
+
+            <div class="flex p-3">
+                <div class="bg-[#EEEEEE] rounded-[100px] w-[80px] h-[24px]">
+                    <img src="../src/images/TikiNow.png" alt="" class="w-[56px] h-[24px] ml-3.5">
+                </div>
+
+                <div class="bg-[#EEEEEE] rounded-[100px] w-[80px] h-[24px] ml-3">
+                    <img src="../src/images/Freeship1.png" alt="" class="w-[56px] h-[24px] ml-3.5">
+                </div>
+            </div>
+
+            <div id="products" class="grid grid-cols-4 gap-2 pb-[100px]">
+                ${data.map(function (book, index) {
+        return /*html*/`
+                <div class="m-3">
+                    <div class="w-[200px] h-[200px] mx-auto p-1">
+                        <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}">
+                            <img src="${book.images[0].base_url}" class="w-[auto] h-[200px]" />
+                        </a>
+                    </div>
+
+                    <div class="p-2">
+                        <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}"
+                            class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
+                        <div class="flex pt-3 pb-3">
+                            <div class="flex border-r-[1px] h-[15px]">
+                                <p class="text-[8px] pr-2 pt-0.5">${rating(book.rating_average)}</p>
+                            </div>
+                            <p class="text-[12px] font-normal leading-[16px] text-[#787878] pl-2">Đã bán ${book.quantity_sold?.value > 1000 ? '1000+' : book.quantity_sold?.value ?? 0}</p>
+                        </div>
+                        <div class="flex">
+                            <p class="text-[16px] font-normal leading-[24px] text-[#FF424E] p-1">${priceFormat.format(book.current_seller.price)}</p>
+                            <div class="w-[40px] h-[20px] bg-[#FFF0F1] border-[1px] border-[#FF424E] rounded-[2px] mt-2">
+                                <p class="text-[14px] leading-[18px] font-normal text-[#FF424E] ml-0.5">-${discount(book.original_price, book.current_seller.price)}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `
+    }).join('')}
+            </div>
+        </div>
+    </div>
+
+    ${Footer()}
+    `
+}
+
+export default ProductPage
