@@ -6,7 +6,7 @@ const Header = function () {
 
         searchBtn.addEventListener("click", function () {
             const keyword = searchInput.value;
-            document.cookie = `${keyword};`;
+            sessionStorage.setItem("searchKeyword", keyword);
         });
     });
 
@@ -23,7 +23,7 @@ const Header = function () {
             <div class="my-auto flex">
                 <input type="text" id="searchInput" placeholder="Search" class="outline-0 w-[500px] h-[40px] pl-5" value="">
                 <a href="/search">
-                    <button id="searchBtn" class="bg-[#0D5CB6] h-[40px] w-[120px] text-white flex hover:bg-blue-900">
+                    <button id="searchBtn" class="bg-[#0D5CB6] h-[40px] w-[120px] text-white flex hover:bg-blue-900 ">
                         <img src="../src/images/Search.png" alt="" class="w-[20px] h-[20px] mt-[11px] ml-5">
                         <p class="text-[13px] font-normal leading-[15px] mt-3 ml-1">Tìm kiếm</p>
                     </button>

@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 const SearchPage = function () {
 
     document.addEventListener("DOMContentLoaded", function () {
-        const searchValue = document.cookie
+        const searchValue = sessionStorage.searchKeyword
 
         const searchBook = data.filter(function (searchBook) {
             return searchBook.name.toLowerCase().includes(searchValue.toLowerCase());
@@ -56,7 +56,7 @@ const SearchPage = function () {
         <div class="mx-auto w-[950px]">
             <div class="flex p-4">
                 <h1 class="text-[23px] leading-[28px] font-normal text-[#000000]">Kết quả tìm kiếm cho:</h1>
-                <p class="text-[23px] leading-[28px] font-normal text-[red] pl-1">${document.cookie}</p>
+                <p class="text-[23px] leading-[28px] font-normal text-[red] pl-1">${sessionStorage.searchKeyword}</p>
             </div>
 
             <div class="border-b-[1px] w-[900px] p-3">

@@ -29,13 +29,11 @@ const ProductDetailPage = function () {
             if (currentValue > 1) {
                 quantityInput.value = currentValue - 1;
             }
-            console.log(quantityInput.value);
         });
 
         incrementBtn.addEventListener("click", () => {
             const currentValue = parseInt(quantityInput.value);
             quantityInput.value = currentValue + 1;
-            console.log(quantityInput.value);
         });
 
         quantityInput.addEventListener("input", () => {
@@ -43,7 +41,6 @@ const ProductDetailPage = function () {
             if (isNaN(currentValue) || currentValue < 1) {
                 quantityInput.value = 1;
             }
-            console.log(quantityInput.value);
         });
     });
 
