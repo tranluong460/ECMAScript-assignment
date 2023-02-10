@@ -1,4 +1,4 @@
-import { priceFormat } from "../../lib";
+import { discount, priceFormat, rating } from "../../lib";
 import Header from "../components/header"
 import Footer from "../components/footer";
 import data from '../../db.json' assert {type: 'json'}
@@ -18,23 +18,6 @@ const ProductDetailPage = function () {
     })
 
     document.title = book.name
-
-    function discount(original_price, current_seller) {
-        const discountValue = ((original_price - current_seller) / original_price) * 100;
-        return Math.round(discountValue);
-    }
-
-    function rating(rating) {
-        let stars = '';
-        for (let i = 0; i < 5; i++) {
-            if (i < rating) {
-                stars += '<i class="fas fa-star"></i>';
-            } else {
-                stars += '<i class="far fa-star"></i>';
-            }
-        }
-        return stars;
-    }
 
     document.addEventListener("DOMContentLoaded", function () {
         const decrementBtn = document.getElementById("decrement");
