@@ -138,7 +138,7 @@ const ProductDetailPage = function () {
                             </div>
 
                             <div class="p-2">
-                                <a href="/product-detail/?id=${simlarbook.id}&cate=${simlarbook.categories.id}" class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${simlarbook.name}</a>
+                                <a href="/product-detail/?book_id=${simlarbook.id}&cate_id=${simlarbook.categories.id}" class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${simlarbook.name}</a>
                                 
                                 <div class="flex pt-1 pb-1">
                                     <div class="flex border-r-[1px] h-[15px]">

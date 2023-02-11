@@ -28,7 +28,7 @@ const SearchPage = function () {
                         </div>
             
                         <div class="p-3 pt-5">
-                            <a href="/product-detail/?id=${searchBook.id}&cate=${searchBook.categories.id}" class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${searchBook.name}</a>
+                            <a href="/product-detail/?book_id=${searchBook.id}&cate_id=${searchBook.categories.id}" class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${searchBook.name}</a>
     
                             <div class="flex pt-3 pb-3">
                                 <div class="flex border-r-[1px] h-[15px]">
@@ -69,7 +69,7 @@ const SearchPage = function () {
                         </div>
             
                         <div class="p-3 pt-5">
-                            <a href="/product-detail/?id=${searchBook.id}&cate=${searchBook.categories.id}" class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${searchBook.name}</a>
+                            <a href="/product-detail/?book_id=${searchBook.id}&cate_id=${searchBook.categories.id}" class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${searchBook.name}</a>
     
                             <div class="flex pt-3 pb-3">
                                 <div class="flex border-r-[1px] h-[15px]">
