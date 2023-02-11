@@ -45,7 +45,7 @@ const Header = function () {
 
                 <div class="my-auto text-white flex hover:text-red-500">
                     <img src="../src/images/Cart.png" alt="" class="w-[32px] h-[32px] ml-5">
-                    <a href="" class="text-[11px] mt-4 ml-1 font-normal leading-[14px]">Giỏ hàng</a>
+                    <a href="/cart" class="text-[11px] mt-4 ml-1 font-normal leading-[14px]">Giỏ hàng</a>
                 </div>
             </div>
         </div>

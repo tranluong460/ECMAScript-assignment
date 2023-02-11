@@ -16,7 +16,6 @@ const ProductDetailPage = function () {
     let simlarbook = data.filter(function (simlarbook) {
         return simlarbook.categories.id == cate && simlarbook.id != id
     })
-    console.log(cate)
 
     document.title = book.name
 

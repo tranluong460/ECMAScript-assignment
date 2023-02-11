@@ -1,9 +1,12 @@
 import { render } from "../lib"
 import ProductPage from "./pages/products"
 import ProductDetailPage from "./pages/productdeail"
+import SearchPage from "./pages/search"
+
 import Navigo from "navigo"
 import './css/main.css'
-import SearchPage from "./pages/search"
+import CartPage from "./pages/cart"
+
 
 // Khai bao DOM
 var app = document.querySelector("#app")
@@ -24,6 +27,11 @@ router.on('/product-detail', function () {
 router.on('/search', function () {
   console.log("Search Page");
   render(SearchPage(), app)
+})
+
+router.on('/cart', function () {
+  console.log("Cart Page");
+  render(CartPage(), app)
 })
 
 router.resolve()
