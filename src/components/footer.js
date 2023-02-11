@@ -513,8 +513,7 @@ const Footer = function () {
                 <div class="mt-5">
                     <h1 class="mb-3 text-[16px] leading-[24px] text-[#38383D] font-normal">Dịch vụ giao hàng</h1>
 
-                    <p class="mt-1"><a rel="nofollow noreferrer" href="https://tikinow.biz?src=footer"
-                            target="_blank"><svg width="68" height="33" viewBox="0 0 68 33" fill="none"
+                    <p class="mt-1"><a rel="nofollow noreferrer" target="_blank"><svg width="68" height="33" viewBox="0 0 68 33" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0)">
                                     <path
@@ -598,8 +597,7 @@ const Footer = function () {
             <div>
                 <h1 class="mb-3 text-[16px] leading-[24px] text-[#38383D] font-normal">Kết nối với chúng tôi</h1>
 
-                <p class="flex"><a rel="nofollow noreferrer" class="p-1" href="https://www.facebook.com/tiki.vn/"
-                        class="icon" target="_blank" title="Facebook"><svg width="32" height="33" viewBox="0 0 32 33"
+                <p class="flex"><a rel="nofollow noreferrer" class="p-1" class="icon" target="_blank" title="Facebook"><svg width="32" height="33" viewBox="0 0 32 33"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M0 16.6665C0 7.82995 7.16344 0.666504 16 0.666504C24.8366 0.666504 32 7.82995 32 16.6665C32 25.5031 24.8366 32.6665 16 32.6665C7.16344 32.6665 0 25.5031 0 16.6665Z"
@@ -607,8 +605,7 @@ const Footer = function () {
                             <path
                                 d="M17.6676 26.0742V17.3693H20.0706L20.389 14.3696H17.6676L17.6717 12.8682C17.6717 12.0858 17.7461 11.6666 18.8698 11.6666H20.372V8.6665H17.9687C15.082 8.6665 14.066 10.1217 14.066 12.5689V14.3699H12.2666V17.3696H14.066V26.0742H17.6676Z"
                                 fill="white"></path>
-                        </svg></a><a rel="nofollow noreferrer" class="p-1 href=" https://www.youtube.com/user/TikiVBlog"
-                        class="icon" target="_blank" title="Youtube"><svg width="32" height="33" viewBox="0 0 32 33"
+                        </svg></a><a rel="nofollow noreferrer" class="p-1 class="icon" target="_blank" title="Youtube"><svg width="32" height="33" viewBox="0 0 32 33"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M0 16.6665C0 7.82995 7.16344 0.666504 16 0.666504C24.8366 0.666504 32 7.82995 32 16.6665C32 25.5031 24.8366 32.6665 16 32.6665C7.16344 32.6665 0 25.5031 0 16.6665Z"
@@ -618,7 +615,7 @@ const Footer = function () {
                                 fill="white"></path>
                             <path d="M14.3999 19.8665V14.5332L18.6666 17.2L14.3999 19.8665Z" fill="#FF0000"></path>
                         </svg></a>
-                    <a rel="nofollow noreferrer" class="p-1 href="" class=" icon" target="_blank" title="Zalo"><svg
+                    <a rel="nofollow noreferrer" class="p-1 class=" icon" target="_blank" title="Zalo"><svg
                             width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M0 16.6665C0 7.82995 7.16344 0.666504 16 0.666504C24.8366 0.666504 32 7.82995 32 16.6665C32 25.5031 24.8366 32.6665 16 32.6665C7.16344 32.6665 0 25.5031 0 16.6665Z"
