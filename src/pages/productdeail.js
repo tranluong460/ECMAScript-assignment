@@ -42,6 +42,13 @@ const ProductDetailPage = function () {
                 quantityInput.value = 1;
             }
         });
+
+        const changeImg = document.querySelectorAll("img[id^='imgsmall']");
+        changeImg.forEach(img => {
+            img.addEventListener("click", function () {
+                document.getElementById("imgbase").src = this.src;
+            });
+        });
     });
 
     return /*html*/`
@@ -52,12 +59,12 @@ const ProductDetailPage = function () {
         <div class="w-[1000px] mx-auto">
             <div class="flex">
                 <div class="border-r-[1px] mx-auto p-5">
-                    <img src="${book.images[0].base_url}" class="w-[444px] h-[444px]" alt="" srcset="">
+                    <img id="imgbase" src="${book.images[0].base_url}" class="w-[444px] h-[444px]" alt="" srcset="">
 
                     <div class="flex w-[auto] h-[auto] pt-1">
-                        ${book.images.slice(0, 4).map(function (image) {
+                        ${book.images.slice(0, 5).map(function (image, index) {
         return `
-                        <img class="w-[64px] h-[64px] p-0.5" src="${image.base_url}" alt="">`
+                        <img id="imgsmall" class="w-[64px] h-[64px] p-0.5 transition-all ease-in-out duration-300 transform hover:scale-125" src="${image.base_url}" alt="">`
     }).join('')}
                     </div>
                 </div>
@@ -126,7 +133,7 @@ const ProductDetailPage = function () {
                         <div class="m-3">
                             <div class="w-[auto] h-[auto] mx-auto p-1">
                                 <a href="/product-detail/?book_id=${simlarbook.id}&cate_id=${simlarbook.categories.id}">
-                                    <img src="${simlarbook.images[0].base_url}" class="w-[auto] h-[180px]" />
+                                    <img src="${simlarbook.images[0].base_url}" class="w-[auto] h-[180px]  transition-all ease-in-out duration-300 transform hover:scale-110" />
                                 </a>
                             </div>
 

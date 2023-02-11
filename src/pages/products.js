@@ -46,11 +46,11 @@ const ProductPage = function () {
                 <div class="m-3">
                     <div class="w-[200px] h-[200px] mx-auto p-1">
                         <a href="/product-detail/?book_id=${book.id}&cate_id=${book.categories.id}">
-                            <img src="${book.images[0].base_url}" class="w-[auto] h-[200px]" />
+                            <img src="${book.images[0].base_url}" class="w-[auto] h-[200px] transition-all ease-in-out duration-300 transform hover:scale-110" />
                         </a>
                     </div>
 
-                    <div class="p-2">
+                    <div class="p-3 pt-5">
                         <a href="/product-detail/?book_id=${book.id}&cate_id=${book.categories.id}"
                             class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
                         <div class="flex pt-3 pb-3">
