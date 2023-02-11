@@ -63,7 +63,7 @@ const SearchPage = function () {
                 return /*html*/`
                     <div class="m-3">
                         <div class="w-[200px] h-[200px] mx-auto p-1">
-                            <a href="/product-detail/?id=${searchBook.id}&cate=${searchBook.categories.id}">
+                            <a href="/product-detail/?book_id=${searchBook.id}&cate_id=${searchBook.categories.id}">
                                 <img src="${searchBook.images[0].base_url}" class="w-[auto] h-[200px] transition-all ease-in-out duration-300 transform hover:scale-110" />
                             </a>
                         </div>
