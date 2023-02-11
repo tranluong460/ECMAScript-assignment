@@ -65,6 +65,11 @@ const ProductDetailPage = function () {
             showMoreBtn.classList.remove("hidden");
             showLessBtn.classList.add("hidden");
         });
+
+        const addCart = document.getElementById("add-cart");
+        addCart.addEventListener("click", () => {
+            alert('Thêm sản phẩm vào giỏ hàng thành công')
+        })
     });
 
     return /*html*/`
@@ -132,9 +137,9 @@ const ProductDetailPage = function () {
                         </div>
 
                         <div class="w-[auto] h-[48px] bg-[#FF3945] rounded-[4px] mt-3">
-                            <a href="" class="text-[14px] leading-[24px] font-normal text-[#FFFFFF] capitalize">
-                                <p class="text-center pt-3 hover:text-yellow-500">chọn mua</p>
-                            </a>
+                            <button id="add-cart" class="text-center w-full h-full">
+                                <p class="text-[14px] leading-[24px] font-normal text-[#FFFFFF] capitalize hover:text-yellow-500">Thêm Vào Giỏ Hàng</p>
+                            </button>
                         </div>
                     </div>
                 </div>
