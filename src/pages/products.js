@@ -51,7 +51,7 @@ const ProductPage = function () {
                     </div>
 
                     <div class="p-2">
-                        <a href="/product-detail/?id=${book.id}&cate=${book.categories.id}"
+                        <a href="/product-detail/?book_id=${book.id}&cate_id=${book.categories.id}"
                             class="hover:text-red-500 text-[13px] font-normal leading-[20px]">${book.name}</a>
                         <div class="flex pt-3 pb-3">
                             <div class="flex border-r-[1px] h-[15px]">
