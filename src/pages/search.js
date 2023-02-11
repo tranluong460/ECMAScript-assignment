@@ -15,6 +15,9 @@ const SearchPage = function () {
             let searchBook = data.filter(function (searchBook) {
                 return searchBook.name.toLowerCase().includes(searchValue.toLowerCase());
             });
+
+            document.title = 'Kết quả tìm kiếm cho: ' + searchValue
+
             document.getElementById("products").innerHTML = searchBook.map(function (searchBook, index) {
                 return /*html*/`
                     <div class="m-3">
@@ -53,6 +56,8 @@ const SearchPage = function () {
             let searchBook = data.filter(function (searchBook) {
                 return searchBook.categories.name.includes(valueCate)
             })
+
+            document.title = 'Kết quả tìm kiếm cho: ' + valueCate
 
             document.getElementById("products").innerHTML = searchBook.map(function (searchBook, index) {
                 return /*html*/`
