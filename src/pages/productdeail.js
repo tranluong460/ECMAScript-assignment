@@ -7,15 +7,16 @@ const ProductDetailPage = function () {
 
     const urlParams = new URLSearchParams(location.search);
 
-    const id = urlParams.get('id')
+    const id = urlParams.get('book_id')
     let book = data.find(function (book) {
         return book.id == id
     })
 
-    const cate = urlParams.get('cate')
+    const cate = urlParams.get('cate_id')
     let simlarbook = data.filter(function (simlarbook) {
         return simlarbook.categories.id == cate && simlarbook.id != id
     })
+    console.log(cate)
 
     document.title = book.name
 
