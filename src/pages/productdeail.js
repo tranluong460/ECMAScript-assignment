@@ -212,7 +212,7 @@ const ProductDetailPage = function () {
 
                 <div class="text-[14px] leading-[21px] font-normal text-[#333333] p-1">
                     <p id="description">${book.short_description}</p>
-                    <div class="border w-[200px] text-center border-[#189EFF] rounded-[10px] mx-auto">
+                    <div class="border w-[200px] text-center border-[#189EFF] rounded-[10px] mx-auto mt-5">
                         <button id="show-more" class="hover:text-red-500 text-[#189EFF] font-normal text-[13px] leading-[39px]">Xem Thêm Nội Dung</button>
                         <button id="show-less" class="hover:text-red-500 text-[#189EFF] font-normal text-[13px] leading-[39px] hidden">Thu Gọn Nội Dung</button>
                     </div>
