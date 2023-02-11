@@ -125,7 +125,7 @@ const ProductDetailPage = function () {
                 return /*html*/`
                         <div class="m-3">
                             <div class="w-[auto] h-[auto] mx-auto p-1">
-                                <a href="/product-detail/?id=${simlarbook.id}&cate=${simlarbook.categories.id}">
+                                <a href="/product-detail/?book_id=${simlarbook.id}&cate_id=${simlarbook.categories.id}">
                                     <img src="${simlarbook.images[0].base_url}" class="w-[auto] h-[180px]" />
                                 </a>
                             </div>
