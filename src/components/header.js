@@ -5,8 +5,22 @@ const Header = function () {
         const searchBtn = document.getElementById("searchBtn");
 
         searchBtn.addEventListener("click", function () {
-            const keyword = searchInput.value;
-            window.location.href = '/search/?value=keyword&keyword=' + keyword
+            const keyword = searchInput.value.replace(/[^a-zA-Z0-9\s]/g, "")
+            if (!keyword) {
+                message.innerHTML = "Vui lòng nhập thông tin cần tìm kiếm.";
+                message.classList.remove('hidden');
+                return;
+            }
+            else {
+                message.classList.add('hidden');
+                window.location.href = '/search/?value=keyword&keyword=' + keyword
+            }
+        });
+
+        document.getElementById("searchInput").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                document.getElementById("searchBtn").click();
+            }
         });
     });
 
@@ -26,7 +40,10 @@ const Header = function () {
                     <img src="../src/images/Search.png" alt="" class="w-[20px] h-[20px] mt-[11px] ml-5">
                     <p class="text-[13px] font-normal leading-[15px] mt-3 ml-1">Tìm kiếm</p>
                 </button>
+                <div id="message" class="absolute hidden text-red-600 text-[14px] font-normal leading-[20px] mt-11 ml-5"></div>
             </div>
+
+            
 
             <div class="flex text-white my-auto">
                 <img src="../src/images/Account.png" alt="" class="w-[32px] h-[32px] mr-2 ml-[-100px]">
