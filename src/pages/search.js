@@ -1,8 +1,7 @@
 import { discount, priceFormat, rating } from "../../lib";
 import Header from "../components/header"
-import Footer from "../components/footer";
-import SlideBar from "../components/slidebar";
-import data from '../../db.json' assert {type: 'json'}
+import Footer from "../components/footer"
+import SlideBar from "../components/slidebar"
 import '@fortawesome/fontawesome-free/css/all.css'
 
 const SearchPage = function () {

@@ -1,6 +1,6 @@
 const Footer = function () {
     return /*html*/`
-    <div class="w-[1200px] mx-auto">
+    <div class="w-[1200px] mx-auto pt-10">
         <div class="grid grid-cols-5 gap-3">
             <div>
                 <h1 class="mb-3 text-[16px] leading-[24px] text-[#38383D] font-normal">Hỗ trợ khách hàng</h1>

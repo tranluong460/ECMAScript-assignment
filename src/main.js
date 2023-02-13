@@ -2,7 +2,6 @@ import { render } from "../lib"
 import ProductPage from "./pages/products"
 import ProductDetailPage from "./pages/productdeail"
 import SearchPage from "./pages/search"
-
 import Navigo from "navigo"
 import './css/main.css'
 import CartPage from "./pages/cart"
