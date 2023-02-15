@@ -122,7 +122,7 @@ const Footer = function () {
             <div>
                 <h1 class="mb-3 text-[16px] leading-[24px] text-[#38383D] font-normal">Phương thức thanh toán</h1>
 
-                <div class="flex grid grid-cols-4 w-[200px]">
+                <div class="grid grid-cols-4 w-[200px]">
                     <span class="icon">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>

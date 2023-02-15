@@ -17,7 +17,7 @@ const ProductDetailPage = function () {
             })
 
             const similarbooks = data.filter(function (similarbooks) {
-                return similarbooks.categories.id == cate
+                return similarbooks.categories.id == cate && similarbooks.id != id
             })
 
             document.title = book.name
