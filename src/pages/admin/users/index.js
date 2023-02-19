@@ -1,6 +1,6 @@
 import Footer from "../../../components/footer"
 import Header from "../../../components/header"
-import SlideBarAdmin from "../../../components/slidebar"
+import SlideBarAdmin from "../../../components/slidebar_admin"
 import ListUserAdmin from "./components/listUser"
 
 const AdminUserPage = function () {
