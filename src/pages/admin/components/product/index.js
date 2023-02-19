@@ -28,7 +28,7 @@ const ListProductAdmin = function () {
         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
             <div class="flex w-2/5">
                 <div class="w-20">
-                    <img class="h-24" src="${item.images[0].base_url}" alt="">
+                    <img class="h-24" src="${item.images?.[0].base_url}" alt="">
                 </div>
                         
                 <div class="flex flex-col justify-between ml-4 flex-grow">

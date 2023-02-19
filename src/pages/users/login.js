@@ -22,6 +22,7 @@ const Login = function () {
                 if (data.email == username && data.password == password) {
                     localStorage.setItem("isLogin", "true")
                     localStorage.setItem("idUser", data.id)
+                    localStorage.setItem("role", data.role)
                 }
             })
         })

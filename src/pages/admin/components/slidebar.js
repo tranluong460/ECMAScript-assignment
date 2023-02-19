@@ -4,11 +4,11 @@ const SlideBarAdmin = function () {
         <h1 class="font-semibold text-2xl border-b pb-8">Trang quản trị</h1>
                             
         <div class="mt-5 hover:text-red-500">
-            <a href="/adminproducts" class="font-semibold text-sm">Products</a>
+            <a href="/adminproducts" class="font-semibold text-sm">Quản lý sản phẩm</a>
         </div>
 
         <div class="mt-5 hover:text-red-500">
-            <a href="/adminusers" class="font-semibold text-sm">Users</a>
+            <a href="/adminusers" class="font-semibold text-sm">Quản lý người dùng</a>
         </div>
     </div>
     `

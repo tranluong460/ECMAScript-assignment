@@ -18,13 +18,17 @@ const Header = function () {
         const searchInput = document.getElementById("searchInput")
         const searchBtn = document.getElementById("searchBtn")
         const isLogin = localStorage.getItem("isLogin")
+        const role = localStorage.getItem("role")
 
         if (isLogin === 'true') {
-            document.getElementById("login").innerHTML = `
-                <img src="../src/images/Account.png" class="w-[32px] h-[32px]">
+            document.getElementById("login").innerHTML = /*html*/`
+                <img src="${data.images}" class="w-[32px] h-[32px] rounded-[50%]">
                 <div id="logout" class="flex mt-2 ml-3 hover:text-red-500">
                     <p>${data.name}</p>
                     <i class="fa fa-caret-down mt-1 ml-1"></i>
+                </div>
+                <div id="admin" class="ml-2 mt-2 hover:text-red-500">
+                    
                 </div>
             `
             const logout = document.getElementById("logout")
@@ -33,9 +37,16 @@ const Header = function () {
                 localStorage.removeItem("idUser")
                 window.location.href = "http://localhost:5173/"
             })
+
+            if (role === "Admin") {
+                document.getElementById("admin").innerHTML = /*html*/`
+                <a href="/adminproducts"><i class="fas fa-user-tie"></i></a>
+                `
+            }
+
         }
         else {
-            document.getElementById("login").innerHTML = `
+            document.getElementById("login").innerHTML = /*html*/`
             <a href="/login" class="hover:text-red-500">Đăng nhập</a> / 
             <a href="/register" class="hover:text-red-500">Đăng kí</a>
             `

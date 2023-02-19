@@ -18,7 +18,8 @@ const ListUserAdmin = function () {
                 fetch(`http://localhost:3000/users/${btn.dataset.id}`, {
                     method: "DELETE",
                 })
-                window.location.reload()
+
+                window.location.href = "http://localhost:5173/adminusers"
             })
         }))
     })

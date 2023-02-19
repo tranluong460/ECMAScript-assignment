@@ -19,19 +19,25 @@ const EditProductPage = function () {
     }, [])
 
     useEffect(function () {
-        document.getElementById("btn-update").addEventListener("click", function () {
+        document.getElementById("btn_update").addEventListener("click", function () {
             const newBook = {
+                "authors": [
+                    {
+                        "name": document.getElementById("author_name").value,
+                    }
+                ],
+                "name": document.getElementById("book_name").value,
                 "categories": {
-                    "name": document.getElementById("name_cate").value
+                    "name": document.getElementById("cate_name").value,
                 },
-                "name": document.getElementById("name").value,
-                "list_price": document.getElementById("list_price").value,
-                // "images": [
-                //     {
-                //         "base_url": document.getElementById("img").src
-                //     }
-                // ],
-                "id": book_id
+                "current_seller": {
+                    "price": parseInt(document.getElementById("current_seller").value),
+                },
+                "list_price": parseInt(document.getElementById("list_price").value),
+                "quantity_sold": {
+                    "value": document.getElementById("quantity_sold").value
+                },
+                "short_description": document.getElementById("short_description").value,
             }
 
             fetch(`http://localhost:3000/books/${book_id}`, {
@@ -41,48 +47,66 @@ const EditProductPage = function () {
                 },
                 body: JSON.stringify(newBook)
             })
+
+            window.location.href = "http://localhost:5173/adminproducts"
         })
     })
 
-    console.log(data)
     return /*html*/`
 
     ${Header()}
     
-    <div class="w-full">
-        <div class="w-[80%] mx-auto p-5">
-            <h1 class="block text-gray-700 text-[20px] font-bold mb-2 text-center">
-                Cập nhật sản phẩm
-            </h1>
-
-            <div class="p-3">
-                <p class="block text-gray-700 text-sm font-bold mb-2">Tên sách</p>
-                <input id="name" type="text" value="${data.name}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    <div class="p-10">
+        <div>
+            <a href="/adminproducts" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </div>
+        
+        <div class="grid gap-6 mb-6 md:grid-cols-2 pt-5">
+            <div>
+                <label for="book_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tên sách</label>
+                <input type="text" id="book_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off"
+                value="${data.name}">
             </div>
 
-            <div class="p-3">
-                <p class="block text-gray-700 text-sm font-bold mb-2">Đơn giá</p>
-                <input id="list_price" type="text" value="${data.list_price}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <div>
+                <label for="author_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tác giả</label>
+                <input type="text" id="author_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" value="${data.authors ? data.authors?.[0].name : "Không có tác giả"}">
             </div>
 
-            <div class="p-3">
-                <p class="block text-gray-700 text-sm font-bold mb-2">Danh mục</p>
-                <input id="name_cate" value="${data.categories?.name}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <div>
+                <label for="cate_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Danh mục</label>
+                <input type="text" id="cate_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" value="${data.categories?.name}">
+            </div>
+            
+            <div>
+                <label for="current_seller" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Giảm giá</label>
+                <input type="text" id="current_seller" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" value="${data.current_seller?.price}">
             </div>
 
-            <div class="p-3">
-                <p class="block text-gray-700 text-sm font-bold mb-2">Hình ảnh:</p>
-                <img id="img" src="${data.images?.[0].base_url}" class="h-[180px] w-[180px] flex-shrink-0 overflow-hidden rounded-md"/>
+            <div>
+                <label for="list_price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Giá gốc</label>
+                <input type="text" id="list_price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" value="${data.list_price}">
             </div>
 
-            <div class="p-3 text-center">
-                <button id="btn-update" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    <a href="/adminproducts">
-                        Cập nhật
-                    </a>
-                </button>
+            <div>
+                <label for="quantity_sold" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Đã bán</label>
+                <input type="number" id="quantity_sold" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" value="${data.quantity_sold?.value}" readonly="False">
             </div>
         </div>
+
+        <div class="mb-6">
+            <label for="short_description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mô tả ngắn</label>
+            <input type="text" id="short_description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off"
+            value="${data.short_description}">
+        </div> 
+
+        <div class="text-center">
+            <button id="btn_update" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Cập nhật
+            </button>
+        </div> 
     </div>
 
     ${Footer()}
