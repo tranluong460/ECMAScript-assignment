@@ -1,9 +1,9 @@
-import { discount, priceFormat, rating, useEffect, useState } from "../../../../lib"
+import { discount, priceFormat, rating, useEffect, useState } from "../../../../../lib"
 
-const SearchCate = function (cate_id) {
+const SearchWord = function (keyword) {
     const [data, setData] = useState([])
     useEffect(function () {
-        fetch(`http://localhost:3000/books?categories.id=${cate_id}`)
+        fetch(`http://localhost:3000/books`)
             .then(function (response) {
                 return response.json()
             })
@@ -12,7 +12,11 @@ const SearchCate = function (cate_id) {
             });
     }, [])
 
-    return data.map(function (searchBook, index) {
+    const searchBook = data.filter(function (searchBook) {
+        return searchBook.name.toLowerCase().includes(keyword);
+    });
+
+    return searchBook.map(function (searchBook, index) {
         return /*html*/`
         <div class="m-3">
             <div class="w-[200px] h-[200px] mx-auto p-1">
@@ -53,7 +57,6 @@ const SearchCate = function (cate_id) {
         </div>
         `
     }).join('')
-
 }
 
-export default SearchCate;
+export default SearchWord;

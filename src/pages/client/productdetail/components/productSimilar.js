@@ -1,4 +1,4 @@
-import { discount, priceFormat, rating } from "../../../../lib"
+import { discount, priceFormat, rating } from "../../../../../lib"
 
 const ProductSimilar = function (similarbooks) {
     return /*html*/`

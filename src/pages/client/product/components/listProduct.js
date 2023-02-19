@@ -1,4 +1,4 @@
-import { discount, priceFormat, rating } from "../../../../lib"
+import { discount, priceFormat, rating } from "../../../../../lib"
 
 const ListProduct = function (data) {
     return /*html*/`

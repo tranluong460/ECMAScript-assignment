@@ -1,4 +1,4 @@
-import { priceFormat, useEffect } from "../../../lib"
+import { priceFormat, useEffect } from "../../../../../lib"
 
 const CartDetail = function () {
     const cart = JSON.parse(sessionStorage.getItem("cart"))

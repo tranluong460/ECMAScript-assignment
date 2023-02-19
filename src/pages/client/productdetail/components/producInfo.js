@@ -1,4 +1,4 @@
-import { discount, priceFormat, rating, useEffect } from "../../../../lib"
+import { discount, priceFormat, rating, useEffect } from "../../../../../lib"
 
 const ProductInfo = function (book) {
     document.title = book?.name

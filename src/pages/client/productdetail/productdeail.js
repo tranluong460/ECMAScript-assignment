@@ -1,10 +1,10 @@
-import { useEffect, useState } from "../../../lib";
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import ProductInfo from "../../components/productdetail/producInfo";
-import ProductSimilar from "../../components/productdetail/productSimilar";
-import ProductSpecifications from "../../components/productdetail/productSpecifications";
-import ProductDescription from "../../components/productdetail/productDescription";
+import { useEffect, useState } from "../../../../lib/index";
+import Header from "../../../components/header"
+import Footer from "../../../components/footer"
+import ProductInfo from "./components/producInfo";
+import ProductSimilar from "./components/productSimilar";
+import ProductSpecifications from "./components/productSpecifications";
+import ProductDescription from "./components/productDescription";
 
 const ProductDetailPage = function () {
     const urlParams = new URLSearchParams(location.search);

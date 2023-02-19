@@ -15,8 +15,6 @@ const Header = function () {
     }, [])
 
     useEffect(function () {
-        const searchInput = document.getElementById("searchInput")
-        const searchBtn = document.getElementById("searchBtn")
         const isLogin = localStorage.getItem("isLogin")
         const role = localStorage.getItem("role")
 
@@ -43,7 +41,6 @@ const Header = function () {
                 <a href="/dashboard"><i class="fas fa-user-tie"></i></a>
                 `
             }
-
         }
         else {
             document.getElementById("login").innerHTML = /*html*/`
@@ -52,8 +49,8 @@ const Header = function () {
             `
         }
 
-        searchBtn.addEventListener("click", function () {
-            const keyword = searchInput.value.replace(/[^a-zA-Z0-9\s]/g, "")
+        document.getElementById("searchBtn").addEventListener("click", function () {
+            const keyword = document.getElementById("searchInput").value.replace(/[^a-zA-Z0-9\s]/g, "")
             if (!keyword) {
                 message.innerHTML = "Vui lòng nhập thông tin cần tìm kiếm";
                 message.classList.remove('hidden');

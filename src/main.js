@@ -1,17 +1,20 @@
 import { render, router } from "../lib/index"
-import ProductPage from "./pages/users/products"
-import ProductDetailPage from "./pages/users/productdeail"
-import SearchPage from "./pages/users/search"
-import CartPage from "./pages/users/cart"
-import Login from "./pages/users/login"
-import Register from "./pages/users/register"
-import '@fortawesome/fontawesome-free/css/all.css'
-import './css/main.css'
-import AdminProductPage from "./pages/admin/products"
+
+import ProductPage from "./pages/client/product/products"
+import ProductDetailPage from "./pages/client/productdetail/productdeail"
+import SearchPage from "./pages/client/search/search"
+import CartPage from "./pages/client/cart/index"
+import Login from "./pages/client/login/login"
+import Register from "./pages/client/register/register"
+
+import AdminProductPage from "./pages/admin/products/index"
 import EditProductPage from "./pages/admin/products/update"
 import CreateProducPage from "./pages/admin/products/create"
-import AdminUserPage from "./pages/admin/users"
-import Dashboard from "./pages/admin/dashboard"
+import AdminUserPage from "./pages/admin/users/index"
+import Dashboard from "./pages/admin/dashboard/index"
+
+import '@fortawesome/fontawesome-free/css/all.css'
+import './css/main.css'
 
 // Khai bao DOM
 var app = document.querySelector("#app")

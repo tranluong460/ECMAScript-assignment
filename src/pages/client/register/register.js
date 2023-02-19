@@ -1,4 +1,4 @@
-import { useEffect } from "../../../lib";
+import { useEffect } from "../../../../lib/index";
 
 const Register = function () {
     document.title = "Đăng ký";

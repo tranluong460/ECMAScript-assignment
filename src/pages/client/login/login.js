@@ -1,4 +1,4 @@
-import { useEffect, useState } from "../../../lib"
+import { useEffect, useState } from "../../../../lib/index"
 
 const Login = function () {
     document.title = "Đăng nhập";

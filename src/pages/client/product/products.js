@@ -1,8 +1,8 @@
-import { useEffect, useState } from "../../../lib";
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import SlideBar from "../../components/slidebar"
-import ListProduct from "../../components/product/listProduct";
+import { useEffect, useState } from "../../../../lib/index";
+import Header from "../../../components/header"
+import Footer from "../../../components/footer"
+import SlideBar from "../../../components/slidebar"
+import ListProduct from "./components/listProduct";
 
 const ProductPage = function () {
     const [data, setData] = useState([])

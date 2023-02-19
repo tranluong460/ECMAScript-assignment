@@ -1,7 +1,7 @@
 import Footer from "../../../components/footer"
 import Header from "../../../components/header"
-import SlideBarAdmin from "../components/slidebar"
-import ListUserAdmin from "../components/user"
+import SlideBarAdmin from "../../../components/slidebar"
+import ListUserAdmin from "./components/listUser"
 
 const AdminUserPage = function () {
     return /*html*/`

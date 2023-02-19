@@ -1,7 +1,7 @@
 import Footer from "../../../components/footer"
 import Header from "../../../components/header"
-import ListProductAdmin from "../components/product"
-import SlideBarAdmin from "../components/slidebar"
+import ListProductAdmin from "./components/listProduct"
+import SlideBarAdmin from "../../../components/slidebar"
 
 const AdminProductPage = function () {
     return /*html*/`

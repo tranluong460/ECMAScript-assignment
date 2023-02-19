@@ -1,4 +1,4 @@
-import { useEffect } from "../../../../lib"
+import { useEffect } from "../../../../../lib"
 
 const ProductDescription = function (book) {
     useEffect(function () {

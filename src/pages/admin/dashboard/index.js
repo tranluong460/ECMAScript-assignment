@@ -1,6 +1,6 @@
 import Footer from "../../../components/footer"
 import Header from "../../../components/header"
-import SlideBarAdmin from "../components/slidebar"
+import SlideBarAdmin from "../../../components/slidebar"
 
 const Dashboard = function () {
     return /*html*/`

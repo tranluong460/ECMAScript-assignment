@@ -1,8 +1,8 @@
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import CartDetail from "../../components/cart/cartDetail";
-import CartSummary from "../../components/cart/cartSummary";
-import CartQuantity from "../../components/cart/cartQuantity";
+import Header from "../../../components/header"
+import Footer from "../../../components/footer"
+import CartDetail from "./components/cartDetail";
+import CartSummary from "./components/cartSummary";
+import CartQuantity from "./components/cartQuantity";
 
 const CartPage = function () {
     document.title = 'Giỏ hàng';

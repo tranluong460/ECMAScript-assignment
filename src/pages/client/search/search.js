@@ -1,8 +1,8 @@
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import SlideBar from "../../components/slidebar"
-import SearchCate from "../../components/search/searchCate";
-import SearchWord from "../../components/search/searchWord";
+import Header from "../../../components/header";
+import Footer from "../../../components/footer"
+import SlideBar from "../../../components/slidebar"
+import SearchCate from "../search/components/searchCate";
+import SearchWord from "../search/components/searchWord";
 
 const SearchPage = function () {
     const urlParams = new URLSearchParams(window.location.search);
