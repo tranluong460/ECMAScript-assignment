@@ -11,6 +11,7 @@ import AdminProductPage from "./pages/admin/products"
 import EditProductPage from "./pages/admin/products/update"
 import CreateProducPage from "./pages/admin/products/create"
 import AdminUserPage from "./pages/admin/users"
+import Dashboard from "./pages/admin/dashboard"
 
 // Khai bao DOM
 var app = document.querySelector("#app")
@@ -63,6 +64,11 @@ router.on('/create', function () {
 router.on('/adminusers', function () {
   console.log("Admin User Page");
   render(AdminUserPage, app)
+})
+
+router.on('/dashboard', function () {
+  console.log("Admin Dashboard Page");
+  render(Dashboard, app)
 })
 
 router.resolve()

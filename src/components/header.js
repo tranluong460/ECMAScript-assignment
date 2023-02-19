@@ -35,12 +35,12 @@ const Header = function () {
             logout.addEventListener("click", function () {
                 localStorage.removeItem("isLogin")
                 localStorage.removeItem("idUser")
-                window.location.href = "http://localhost:5173/"
+                window.location.href = "/"
             })
 
             if (role === "Admin") {
                 document.getElementById("admin").innerHTML = /*html*/`
-                <a href="/adminproducts"><i class="fas fa-user-tie"></i></a>
+                <a href="/dashboard"><i class="fas fa-user-tie"></i></a>
                 `
             }
 
