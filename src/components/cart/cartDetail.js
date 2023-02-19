@@ -1,8 +1,19 @@
-import { priceFormat } from "../../../lib"
+import { priceFormat, useEffect } from "../../../lib"
 
 const CartDetail = function () {
-    const key = sessionStorage.getItem("cart")
-    const cart = JSON.parse(key)
+    const cart = JSON.parse(sessionStorage.getItem("cart"))
+
+    useEffect(function () {
+        document.querySelectorAll('#btn_delete').forEach((btn => {
+            btn.addEventListener('click', function () {
+                let cart = JSON.parse(sessionStorage.getItem('cart'))
+                let newCart = cart.filter(item => item.product.id != btn.dataset.id)
+                sessionStorage.setItem('cart', JSON.stringify(newCart))
+                window.location.reload()
+            })
+        }))
+    })
+
     if (!Array.isArray(cart) || cart.length == '') {
         return /*html*/`
         <div class="flex border-b-[1px] text-center font-semibold">
@@ -22,7 +33,7 @@ const CartDetail = function () {
                     <div class="flex flex-col justify-between ml-4 flex-grow">
                         <span class="font-bold text-sm">${item.product.name}</span>
                         <span class="text-red-500 text-xs">${item.product.categories.name}</span>
-                        <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+                        <button id="btn_delete" data-id="${item.product.id}" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</button>
                     </div>
                 </div>
 
