@@ -664,4 +664,4 @@ const Footer = function () {
     `
 }
 
-export default Footer;
+export default Footer

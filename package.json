@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server --watch db.json",
     "build": "vite build",
-    "preview": "vite preview",
-    "server": "json-server --watch db.json"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

@@ -11,7 +11,7 @@ const SlideBar = function () {
                 if (!newListCate.includes(book.categories.name)) {
                     newListCate.push(book.categories.name);
                     return /*html*/`
-                        <a href="/search/?value=cate&cate=${book.categories.name}"
+                        <a href="/search/?cate_id=${book.categories.id}"
                         class="hover:text-red-500 text-[12px] leading-[20px] font-normal pl-3 pb-[8px] text-[#242424]">${book.categories.name}</a>
                         `
                 }

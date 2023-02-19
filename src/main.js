@@ -1,36 +1,68 @@
-import { render } from "../lib"
-import ProductPage from "./pages/products"
-import ProductDetailPage from "./pages/productdeail"
-import SearchPage from "./pages/search"
-import Navigo from "navigo"
+import { render, router } from "../lib/index"
+import ProductPage from "./pages/users/products"
+import ProductDetailPage from "./pages/users/productdeail"
+import SearchPage from "./pages/users/search"
+import CartPage from "./pages/users/cart"
+import Login from "./pages/users/login"
+import Register from "./pages/users/register"
+import '@fortawesome/fontawesome-free/css/all.css'
 import './css/main.css'
-import CartPage from "./pages/cart"
-
+import AdminProductPage from "./pages/admin/products"
+import EditProductPage from "./pages/admin/products/update"
+import CreateProducPage from "./pages/admin/products/create"
+import AdminUserPage from "./pages/admin/users"
 
 // Khai bao DOM
 var app = document.querySelector("#app")
 
-// app.innerHTML = ProductPage()
-
-const router = new Navigo()
 router.on('/', function () {
   console.log("Product Page");
-  render(ProductPage(), app)
+  render(ProductPage, app)
 })
 
 router.on('/product-detail', function () {
   console.log("Product Detail Page");
-  render(ProductDetailPage(), app)
+  render(ProductDetailPage, app)
 })
 
 router.on('/search', function () {
   console.log("Search Page");
-  render(SearchPage(), app)
+  render(SearchPage, app)
 })
 
 router.on('/cart', function () {
   console.log("Cart Page");
-  render(CartPage(), app)
+  render(CartPage, app)
+})
+
+router.on('/login', function () {
+  console.log("Login Page");
+  render(Login, app)
+})
+
+router.on('/register', function () {
+  console.log("Register Page");
+  render(Register, app)
+})
+
+router.on('/adminproducts', function () {
+  console.log("Admin Product Page");
+  render(AdminProductPage, app)
+})
+
+router.on('/edit', function () {
+  console.log("Admin Edit Product Page");
+  render(EditProductPage, app)
+})
+
+router.on('/create', function () {
+  console.log("Admin Create Product Page");
+  render(CreateProducPage, app)
+})
+
+router.on('/adminusers', function () {
+  console.log("Admin User Page");
+  render(AdminUserPage, app)
 })
 
 router.resolve()
