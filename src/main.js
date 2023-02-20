@@ -16,7 +16,6 @@ import Dashboard from "./pages/admin/dashboard/index"
 import '@fortawesome/fontawesome-free/css/all.css'
 import './css/main.css'
 
-// Khai bao DOM
 var app = document.querySelector("#app")
 
 router.on('/', function () {
