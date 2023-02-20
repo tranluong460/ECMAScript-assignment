@@ -5,6 +5,7 @@ import CartSummary from "./components/cartSummary";
 import CartQuantity from "./components/cartQuantity";
 
 const CartPage = function () {
+
     document.title = 'Giỏ hàng';
 
     return /*html*/`
