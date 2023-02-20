@@ -21,9 +21,11 @@ const Header = function () {
         if (isLogin === 'true') {
             document.getElementById("login").innerHTML = /*html*/`
                 <img src="${data.images}" class="w-[32px] h-[32px] rounded-[50%]">
-                <div id="logout" class="flex mt-2 ml-3 hover:text-red-500">
+                <div class="flex mt-2 ml-3">
                     <p>${data.name}</p>
-                    <i class="fa fa-caret-down mt-1 ml-1"></i>
+                    <div id="logout" class="hover:text-red-500">
+                        <i class="fa fa-caret-down mt-1 ml-1"></i>
+                    </div>
                 </div>
                 <div id="admin" class="ml-2 mt-2 hover:text-red-500">
                     

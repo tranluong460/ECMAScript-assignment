@@ -8,7 +8,7 @@ const ListProduct = function (data) {
         <div class="m-3">
             <div class="w-[200px] h-[200px] mx-auto p-1">
                 <a href="/product-detail/?book_id=${book.id}&cate_id=${book.categories.id}">
-                    <img src="${book.images[0].base_url}" class="w-[auto] h-[200px] transition-all ease-in-out duration-300 transform hover:scale-110" />
+                    <img src="${book.images?.[0].base_url}" class="w-[auto] h-[200px] transition-all ease-in-out duration-300 transform hover:scale-110" />
                 </a>
             </div>
 

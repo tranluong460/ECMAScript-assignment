@@ -22,6 +22,8 @@ const Register = function () {
                 },
                 body: JSON.stringify(newUser)
             })
+
+            window.location.href = "/login"
         })
     })
 
@@ -54,7 +56,7 @@ const Register = function () {
                                     Mật khẩu
                                 </div>
                             </div>
-                            <input id="password" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Mời nhập mật khẩu" autocomplete="off">
+                            <input id="password" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="password" placeholder="Mời nhập mật khẩu" autocomplete="off">
                         </div>
 
                         <div class="mt-4">

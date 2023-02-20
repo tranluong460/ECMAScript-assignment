@@ -1,4 +1,9 @@
+import checkRole from "./checkRole"
+
 const SlideBarAdmin = function () {
+
+    checkRole()
+
     return /*html*/`
     <div class="w-1/4 px-8 py-10 text-center">
         <h1 class="font-semibold text-2xl border-b pb-8">Trang quản trị</h1>

@@ -33,8 +33,8 @@ const CartDetail = function () {
                     <div class="flex flex-col justify-between ml-4 flex-grow">
                         <span class="font-bold text-sm">${item.product.name}</span>
                         <span class="text-red-500 text-xs">${item.product.categories.name}</span>
-                        <button id="btn_delete" data-id="${item.product.id}" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</button>
-                    </div>
+                        <button id="btn_delete" data-id="${item.product.id}" class="text-left font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</button>
+                        </div>
                 </div>
 
                 <div class="flex justify-center w-1/5">
