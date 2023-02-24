@@ -3,21 +3,10 @@
     {
       "book_cover": null,
       "categories": {
-        "id": 316,
-        "name": "Sách tiếng Việt",
-        "is_leaf": false
+        "name": "Sách tiếng Việt"
       },
       "current_seller": {
-        "id": 53660,
-        "sku": "7328355137461",
-        "name": "Nhà sách Fahasa",
-        "link": "https://tiki.vn/cua-hang/nha-sach-fahasa",
-        "logo": "ce/b3/22/b8fabaef7909cfe7349e7b538a174ab8.jpg",
-        "price": 131100,
-        "product_id": "80959947",
-        "store_id": 51001,
-        "is_best_store": false,
-        "is_offline_installment_supported": null
+        "price": 131100
       },
       "description": "<p>Chúng ta đang sống trong một thời đại vội vã, dường như mọi giao tiếp đều ở trên màn hình xanh, và dường như chúng ta thường quên đi những niềm vui giản dị, những ấm áp yêu thương, những cử chỉ chân thành ở một nơi mà chúng ta sống nhiều hơn ở nhà – đó là công sở.</p>\n<p>Để rồi một ngày mọi áp lực như đổ vào đầu chúng ta cùng một lúc, áp lực từ sếp, áp lực từ đồng nghiệp, áp lực từ nhân viên…</p>\n<p>Xì trét … xì trét khiến mỗi đêm chúng ta không thể ngủ được rồi luôn tự hỏi: Chúng ta đang làm cái quái gì vậy?</p>\n<p>Thực tế là, chúng ta có làm gì đâu? Chính vì chúng ta không làm gì nên xì trét nối liền xì trét, áp lực nối liền áp lực.</p>\n<p>Giá mà chúng ta biết lắng nghe hơn, biết chia sẻ hơn, biết hợp tác hơn, biết rèn luyện kỹ năng cho bản thân hơn, biết tôn trọng hơn… thì công sở thực sự là một mái nhà thứ hai của chúng ta.</p>\n<p>Để cho mọi nhân viên, mọi vị sếp không thốt lên từ “giá mà”, chúng tôi viết cuốn sách này, từ kinh nghiệm quý báu trong và ngoài nước hi vọng có thể như một chiếc phao giúp quý vị “sống sót” giữa muôn trùng dông bão có tên là “áp lực nơi công sở”.</p><p>Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, thuế nhập khẩu (đối với đơn hàng giao từ nước ngoài có giá trị trên 1 triệu đồng).....</p>",
       "images": [
@@ -80,7 +69,15 @@
         }
       ],
       "id": 1,
-      "isHidden": false
+      "isHidden": false,
+      "authors": [
+        {
+          "name": "Không có tác giả"
+        }
+      ],
+      "quantity_sold": {
+        "value": ""
+      }
     },
     {
       "authors": [
